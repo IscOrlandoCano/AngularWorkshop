@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Angular and Spring App</title>
 </head>
 <body>
 <h1>
