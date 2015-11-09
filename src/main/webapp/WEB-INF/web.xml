@@ -29,5 +29,18 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+<!-- 	  SPRING SECURITY FILTER -->
+	<filter>
+  	  <filter-name>springSecurityFilterChain</filter-name>
+  	  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  	  <init-param>
+        <param-name>contextAttribute</param-name>
+    	<param-value>org.springframework.web.servlet.FrameworkServlet.CONTEXT.appServlet</param-value>
+	  </init-param>
+    </filter>
 
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
