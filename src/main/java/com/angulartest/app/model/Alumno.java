@@ -1,0 +1,56 @@
+package com.angulartest.app.model;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "student")
+public class Alumno implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 625946868566225951L;
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private Set<Materia> subjects = new HashSet<>();
+	
+	@Id
+	@Column(name = "id")
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	@Column(name = "first_name")
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	@Column(name = "last_name")
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
+	public Set<Materia> getSubjects() {
+		return subjects;
+	}
+	public void setSubjects(Set<Materia> subjects) {
+		this.subjects = subjects;
+	}	
+	
+}

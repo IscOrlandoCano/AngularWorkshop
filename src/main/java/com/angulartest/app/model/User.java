@@ -1,4 +1,5 @@
 package com.angulartest.app.model;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -10,12 +11,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7464889220850919092L;
 	private String username;
 	private String password;
 	private boolean enabled;
-	private Set<UserRole> userRole = new HashSet<UserRole>(0);
+	private Set<UserRole> userRole = new HashSet<>(0);
 
 	public User() {
 	}

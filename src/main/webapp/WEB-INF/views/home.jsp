@@ -1,13 +1,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<html>
+<html ng-app="AngularWorkshop">
 <head>
 	<title>Angular and Spring App</title>
+<!-- 	CSS Styles -->
 	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/css/app.css">
-	<script src="resources/scripts/angular.min.js"></script>
+	
+<!-- 	JS Frameworks Resources -->
 	<script src="resources/scripts/jquery-1.11.3.min.js"></script>
+	<script src="resources/scripts/angular.min.js"></script>
+	<script src="resources/scripts/angular-route.min.js"></script>
+	<script src="resources/scripts/angular-resource.min.js"></script>
 	<script src="resources/scripts/bootstrap.min.js"></script>
+	
+<!-- 	My App Angular Resources -->
+	<script src="resources/scripts/app/app.js"></script>
+	<script src="resources/scripts/app/services/DataService.js"></script>
+	<script src="resources/scripts/app/controllers/AlumnosController.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -26,9 +37,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Alumnos <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Materias</a></li>
-        <li><a href="#">Profesores</a></li>
+        <li class="active"><a href="/Alumnos">Alumnos <span class="sr-only">(current)</span></a></li>
+        <li><a href="/Materias">Materias</a></li>
+        <li><a href="/Profesores">Profesores</a></li>
 <!--         <li class="dropdown"> -->
 <!--           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
 <!--           <ul class="dropdown-menu"> -->
