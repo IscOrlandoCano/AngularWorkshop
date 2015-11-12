@@ -1,3 +1,47 @@
 <section ng-controller="AlumnosController">
-
+	<div class="row">
+		<div class="col-lg-7">
+			<form role="form">
+			  <div class="form-group">
+			    <label for="email">Nombre:</label>
+			    <input type="text" class="form-control" ng-model="firstName">
+			  </div>
+			  <div class="form-group">
+			    <label for="email">Apellido:</label>
+			    <input type="text" class="form-control" ng-model="lastName">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">Materia:</label>
+			    <select class="form-control" ng-options="obj as obj.subjectName for obj in materias" ng-model="materia">
+			    </select>
+			  </div>
+			  <button type="submit" class="btn btn-default">Guardar</button>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-7">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>
+							<a href="" ng-click="predicate = 'id'; reverse=!reverse">Id </a>  <span class="glyphicon glyphicon-sort" ng-show="predicate == 'id'"></span>
+						</td>
+						<td>
+							<a href="" ng-click="predicate = 'firstName'; reverse=!reverse"> Nombre</a> <span class="glyphicon glyphicon-sort" ng-show="predicate == 'firstName'"></span>
+						</td>
+						<td>
+							<a href="" ng-click="predicate = 'lastName'; reverse=!reverse"> Apellido </a>  <span class="glyphicon glyphicon-sort" ng-show="predicate == 'lastName'"></span>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="alumno in alumnos | orderBy:predicate:reverse" ng-class="{active : $index % 2 != 0}">
+						<td>{{ alumno.id }}</td>
+						<td>{{ alumno.firstName }}</td>
+						<td>{{ alumno.lastName }}</td>
+					</tr>
+		</table>
+		</div>
+	</div>
 </section>

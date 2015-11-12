@@ -18,6 +18,7 @@
 	<script src="resources/scripts/app/app.js"></script>
 	<script src="resources/scripts/app/services/DataService.js"></script>
 	<script src="resources/scripts/app/controllers/AlumnosController.js"></script>
+	<script src="resources/scripts/app/controllers/MateriasController.js"></script>
 
 </head>
 <body>
@@ -37,9 +38,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/Alumnos">Alumnos <span class="sr-only">(current)</span></a></li>
-        <li><a href="/Materias">Materias</a></li>
-        <li><a href="/Profesores">Profesores</a></li>
+        <li class="active"><a href="#/Alumnos">Alumnos <span class="sr-only">(current)</span></a></li>
+        <li><a href="#/Materias">Materias</a></li>
+        <li><a href="#/Profesores">Profesores</a></li>
 <!--         <li class="dropdown"> -->
 <!--           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
 <!--           <ul class="dropdown-menu"> -->
@@ -75,15 +76,13 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<section ng-view class="main-container">
-	<div class="row">
-		content
-	</div>
-</section>
-<footer class="footer">
-  <div class="container-fluid">
-   <span>All rights reserved School Application &copy;<br>Server Time: ${serverTime}</span>
-  </div>
-</footer>
+	 <div class="container body-content">
+        <div ng-view>  </div>
+        <footer class="footer">
+		  <div class="container-fluid">
+		   <span>All rights reserved School Application &copy;<br>Server Time: ${serverTime}</span>
+		  </div>
+		</footer>
+     </div>
 </body>
 </html>

@@ -4,12 +4,17 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "student")
@@ -21,8 +26,20 @@ public class Alumno implements Serializable{
 	private Long id;
 	private String firstName;
 	private String lastName;
-	private Set<Materia> subjects = new HashSet<>();
+//	private Set<Materia> materias = new HashSet<>();
 	
+	
+	
+	public Alumno() {
+		super();
+	}
+	public Alumno(Long id, String firstName, String lastName) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+//		this.materias = materias;
+	}
 	@Id
 	@Column(name = "id")
 	public Long getId() {
@@ -45,12 +62,16 @@ public class Alumno implements Serializable{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
-	public Set<Materia> getSubjects() {
-		return subjects;
-	}
-	public void setSubjects(Set<Materia> subjects) {
-		this.subjects = subjects;
-	}	
-	
+//	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//	@JoinTable(name = "student_subjects", joinColumns = { 
+//			@JoinColumn(name = "ID_STUDENT", nullable = false, updatable = false) }, 
+//			inverseJoinColumns = { @JoinColumn(name = "ID_SUBJECT", 
+//					nullable = false, updatable = false) })
+//	public Set<Materia> getMaterias() {
+//		return materias;
+//	}
+//	public void setMaterias(Set<Materia> subjects) {
+//		this.materias = subjects;
+//	}
+
 }

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.angulartest.app.model.Alumno;
-import com.angulartest.app.services.AlumnosService;
+import com.angulartest.app.service.AlumnosService;
 
 @RestController
 @RequestMapping("/api/")

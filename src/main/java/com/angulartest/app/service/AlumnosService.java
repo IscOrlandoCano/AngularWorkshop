@@ -1,4 +1,4 @@
-package com.angulartest.app.services;
+package com.angulartest.app.service;
 
 import java.util.List;
 
